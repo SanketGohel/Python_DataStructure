@@ -5,8 +5,17 @@
 #Return True if n is a happy number, and False if not.
 
 
-
-
 class Solution:
     def isHappy(self, n: int) -> bool:
-            return self.isHappy(sum([int(i) ** 2 for i in str(n)])) if n > 4 else n == 1
+            
+            d={}
+            while True:
+                num=str(n)
+                num1=sum([int(x)**2 for x in num])
+                if num1 in d:
+                	return False
+                else:d[num1]=1
+                if num1==1:
+                	return True
+                n=num1
+
