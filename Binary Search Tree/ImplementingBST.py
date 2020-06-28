@@ -1,4 +1,4 @@
-class Node:
+class node:
 	def __init__(self,value = None):
 		self.value = value
 		self.left = None
@@ -10,21 +10,29 @@ class binary_search:
 
 	def insert(self,value):
 		if self.root == None:
-			self.root = Node(value)
+			self.root = node(value)
 		else:
 			self._insert(value,self.root)
 
-	def _insert(self,value,cur_node):
-		if value < cur_node.value:
-			if cur_node.left == None:
-				cur_nod.left = Node(value)
+	def _insert(self,value,root):
+		if value < root.value:
+			if root.left == None:
+				root.left = node(value)
 			else:
-				self._insert(value,cur_node.left)
+				self._insert(value,root.left)
 		else: 
-			if cur_node.right == None:
-				cur_nod.right = Node(value)
+			if root.right == None:
+				root.right = node(value)
 			else:
-				self._insert(value,cur_node.right)
+				self._insert(value,root.right)
+
+
+
+
+
+
+
+
 
 
 
